@@ -1,38 +1,27 @@
 package l.v;
 
 /**
- * This is an algorith for doing Binary search on Arrays
+ * 
  * 
  * @author Vivek
  *
  */
 public class BinarySearch {
 
-	int[] a = new int[10000001];
+	/**
+	 * 
+	 * @param n number to be searched
+	 * @param a sorted array from which number is to be searched
+	 * @return index position of the number if found in the array else -1
+	 */
+	public static int doBinarySearch(int n, int[] a) {
 
-	public BinarySearch() {
-		for (int i = 0; i < 10000001; i++) {
-			a[i] = i;
-		}
+		return doBinarySearch(n, a, 0, a.length - 1);
 	}
 
-	public static void main(String[] args) {
+	private static int doBinarySearch(int a1, int[] aa, int start, int end) {
 
-		BinarySearch bs = new BinarySearch();
-		long t1 = System.currentTimeMillis();
-
-		t1 = System.currentTimeMillis();
-		for (int i = 0; i < 10000000; i++) {
-			bs.doBinarySearch(1, bs.a, 0, bs.a.length - 1);
-		}
-		System.out.println("Time taken to binary search :"
-				+ (System.currentTimeMillis() - t1));
-
-	}
-
-	int doBinarySearch(int a1, int[] aa, int start, int end) {
-
-		if (start > end)
+		if (start > end) // signals that number is not present in the array
 			return -1;
 		int mid = (end - start + 1) / 2 + start;
 
@@ -43,9 +32,8 @@ public class BinarySearch {
 		} else
 			return mid;
 
-		return doBinarySearch(a1, aa, start, end);
-
-		// return -1;
+		return doBinarySearch(a1, aa, start, end); // recursive call to the
+													// doBinarySearch method
 	}
 
 }
