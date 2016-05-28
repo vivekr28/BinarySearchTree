@@ -1,6 +1,7 @@
 package l.v;
 
 /**
+ * This is an algorith for doing Binary search on Arrays
  * 
  * @author Vivek
  *
