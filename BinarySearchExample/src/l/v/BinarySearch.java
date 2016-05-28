@@ -1,5 +1,10 @@
 package l.v;
 
+/**
+ * 
+ * @author Vivek
+ *
+ */
 public class BinarySearch {
 
 	int[] a = new int[10000001];
